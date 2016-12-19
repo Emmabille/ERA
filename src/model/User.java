@@ -3,6 +3,7 @@
  */
 package model;
 
+
 /**User class
  * @author aureliadelaune
  *
@@ -100,8 +101,9 @@ public class User {
 	 * @param password the password to set
 	 */
 	public void setPassword(String password) {
-		PasswordEncoder crypto = new Md5PasswordEncoder();
-		this.password = crypto.encodePassword(password, null);
+//		PasswordEncoder crypto = new Md5PasswordEncoder();
+//		this.password = crypto.encodePassword(password, null);
+		this.password = password;
 	}
 
 }
