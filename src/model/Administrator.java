@@ -8,5 +8,10 @@ package model;
  *
  */
 public class Administrator {
-
+	private int identifiantAdmin;
+	
+	public Administrator(String firstName, String lastName){
+		
+	}
+	
 }
