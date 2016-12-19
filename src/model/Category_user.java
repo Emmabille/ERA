@@ -4,6 +4,7 @@
 package model;
 
 /**
+ * Category_user entity
  * @author aureliadelaune
  *
  */

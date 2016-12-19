@@ -4,13 +4,21 @@
 package model;
 
 /**
+ * Administrator entity
  * @author aureliadelaune
- *
  */
 public class Administrator extends User{
 	private int identifiantAdmin;
 
 	/**
+	 * constructor by default for the Administrator entity
+	 */
+	public Administrator(){
+		
+	}
+	
+	/**
+	 * full constructor for the Administrator entity, calling the User constructor, with:
 	 * @param fname
 	 * @param lname
 	 * @param login
@@ -35,8 +43,5 @@ public class Administrator extends User{
 	public void setIdentifiantAdmin(int identifiantAdmin) {
 		this.identifiantAdmin = identifiantAdmin;
 	}
-
-	
-
 	
 }

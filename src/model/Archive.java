@@ -6,6 +6,7 @@ package model;
 import java.util.Date;
 
 /**
+ * Archive entity
  * @author aureliadelaune
  *
  */

@@ -3,7 +3,8 @@
  */
 package model;
 
-/**Teacher class
+/**
+ * Teacher entity
  * @author aureliadelaune
  *
  */
@@ -11,6 +12,14 @@ public class Teacher extends User{
 	private int identifiantTeacher;
 
 	/**
+	 * constructor by default for the Teacher entity
+	 */
+	public Teacher(){
+		
+	}
+	
+	/**
+	 * full constructor for the Teacher entity, calling for the User constructor, with:
 	 * @param fname
 	 * @param lname
 	 * @param login
@@ -20,8 +29,16 @@ public class Teacher extends User{
 	public Teacher(int identifiantTeacher, String fname, String lname, String login, String password) {
 		super(fname, lname, login, password);
 		this.setIdentifiantTeacher(identifiantTeacher);
+		
 	}
 
+/**
+ * downloadHomework method
+ */
+	public void downloadHomework(){
+		
+	}
+	
 	/**
 	 * @return the identifiantTeacher
 	 */
@@ -35,8 +52,5 @@ public class Teacher extends User{
 	public void setIdentifiantTeacher(int identifiantTeacher) {
 		this.identifiantTeacher = identifiantTeacher;
 	}
-
-	
-	
 
 }

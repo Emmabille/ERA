@@ -4,6 +4,7 @@
 package model;
 
 /**
+ * Storage_entity
  * @author aureliadelaune
  *
  */

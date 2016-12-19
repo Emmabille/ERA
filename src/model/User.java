@@ -4,7 +4,8 @@
 package model;
 
 
-/**User class
+/**
+ * User entity
  * @author aureliadelaune
  *
  */
@@ -15,9 +16,18 @@ public class User {
 	private String userName;
 	private String password;
 	
+/**
+ * default constructor for the User entity, no parameter
+ */
 	public User(){
 	}
-	
+/**
+ * full constructor for the User entity, with:
+ * @param fname
+ * @param lname
+ * @param login
+ * @param password
+ */
 	public User(String fname, String lname, String login, String password){
 		this.firstName = fname;
 		this.lastName = lname;
@@ -28,12 +38,28 @@ public class User {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
+/**
+ * toString method for the User entity
+ */
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName + ", password="
+		return "User [First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
 				+ password + "]";
 	}
-
+/**
+ * connect method
+ */
+	public void connect(){
+		
+	}
+	
+/**
+ * disconnect method
+ */
+	public void disconnect(){
+		
+	}
+	
 	/**
 	 * @return the id
 	 */
