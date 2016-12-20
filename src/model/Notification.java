@@ -21,7 +21,10 @@ private int idNotification;
 		this.coreMessage = coreMessage;
 		this.titleMessage = titleMessage;
 	}
-
+    
+	public void mailTo(){
+		
+	}
  
  
 

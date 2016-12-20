@@ -5,12 +5,12 @@ import java.util.Date;
 public class Subject {
 	private int idSubject;
 	private String title;
-	private Date createAt;
 	private Date deadline;
-	private int  groupSize; 
+	private int groupSize; 
 	private String description;
 	private int idPromo;
 	private String specialty;
+	private Date createAt;
 	
 	
 	
@@ -22,23 +22,43 @@ public class Subject {
 	/**
 	 * @param idSubject
 	 * @param title
-	 * @param createAt
 	 * @param deadline
 	 * @param idgroupe
 	 * @param description
 	 * @param idPromo
 	 */
-	public Subject(int idSubject, String title, int groupSize, String description,
+	public Subject(int idSubject, String title, Date deadline, int groupSize, String description,
 			int idPromo, String specialty) {
 		super();
 		this.idSubject = idSubject;
 		this.title = title;
-		this.createAt = new Date();
-		//this.deadline = deadline;
+		this.deadline = deadline;
 		this.groupSize = groupSize;
 		this.description = description;
 		this.idPromo = idPromo;
 		this.specialty= specialty;
+		this.createAt= new Date();
+		
+	}
+	
+	public void createSubject(){
+		
+		
+		
+	}
+	
+	public void consultSubject(){
+		
+	}
+	
+	public void apdateSubject(){
+		
+	}
+	
+		
+	
+	public void deleteSubject(){
+		
 	}
 
 
@@ -74,21 +94,7 @@ public class Subject {
 	}
 
 
-	/**
-	 * @return the createAt
-	 */
-	public Date getCreateAt() {
-		return createAt;
-	}
-
-
-	/**
-	 * @param createAt the createAt to set
-	 */
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
-	}
-
+	
 
 	/**
 	 * @return the deadline
@@ -170,7 +176,17 @@ public class Subject {
 	}
 
 
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Subject [idSubject=" + idSubject + ", title=" + title + ", deadline=" + deadline + ", groupSize="
+				+ groupSize + ", description=" + description + ", idPromo=" + idPromo + ", specialty=" + specialty
+				+", createAt=" +createAt+ "]";
+	}
+
+
 	
 	
 	
