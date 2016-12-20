@@ -20,7 +20,6 @@ public class User {
  * default constructor for the User entity, no parameter
  */
 	public User(){
-		
 	}
 /**
  * full constructor for the User entity, with:

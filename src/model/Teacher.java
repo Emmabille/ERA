@@ -37,7 +37,7 @@ public class Teacher extends User{
 	 */
 	@Override
 	public String toString() {
-		return "idTeacher = " + idTeacher + super.toString();
+		return "idTeacher = " + idTeacher + ", "+ super.toString();
 	}
 
 /**

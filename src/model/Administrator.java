@@ -31,6 +31,15 @@ public class Administrator extends User {
 		super(fname, lname, login, password);
 		this.setIdAdmin(idAdmin);
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "idAdmin = " + idAdmin + ", " + super.toString();
+	}
+	
 
 	/**
 	 * @return the identifiantAdmin
@@ -46,4 +55,5 @@ public class Administrator extends User {
 		this.idAdmin = idAdmin;
 	}
 	
+
 }
