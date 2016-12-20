@@ -25,7 +25,7 @@ public class Administrator extends User {
 	 * @param lname
 	 * @param login
 	 * @param password
-	 * @param identifiantAdmin
+	 * @param idAdmin
 	 */
 	public Administrator(String fname, String lname, String login, String password, int idAdmin) {
 		super(fname, lname, login, password);

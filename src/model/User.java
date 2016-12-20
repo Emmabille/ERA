@@ -10,7 +10,7 @@ package model;
  *
  */
 public class User {
-	private int id;
+	private int idUser;
 	private String firstName;
 	private String lastName;
 	private String userName;
@@ -64,14 +64,14 @@ public class User {
 	 * @return the id
 	 */
 	public int getId() {
-		return id;
+		return idUser;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
-		this.id = id;
+		this.idUser = id;
 	}
 
 	/**
