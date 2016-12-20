@@ -5,11 +5,13 @@ import java.util.Date;
 public class Subject {
 	private int idSubject;
 	private String title;
-	private Date creatAt;
+	private Date createAt;
 	private Date deadline;
-	private int  idgroupe; 
+	private int  groupSize; 
 	private String description;
 	private int idPromo;
+	private String specialty;
+	
 	
 	
 	public Subject(){
@@ -20,22 +22,23 @@ public class Subject {
 	/**
 	 * @param idSubject
 	 * @param title
-	 * @param creatAt
+	 * @param createAt
 	 * @param deadline
 	 * @param idgroupe
 	 * @param description
 	 * @param idPromo
 	 */
-	public Subject(int idSubject, String title, Date creatAt, Date deadline, int idgroupe, String description,
-			int idPromo) {
+	public Subject(int idSubject, String title, int groupSize, String description,
+			int idPromo, String specialty) {
 		super();
 		this.idSubject = idSubject;
 		this.title = title;
-		this.creatAt = creatAt;
-		this.deadline = deadline;
-		this.idgroupe = idgroupe;
+		this.createAt = new Date();
+		//this.deadline = deadline;
+		this.groupSize = groupSize;
 		this.description = description;
 		this.idPromo = idPromo;
+		this.specialty= specialty;
 	}
 
 
@@ -72,18 +75,18 @@ public class Subject {
 
 
 	/**
-	 * @return the creatAt
+	 * @return the createAt
 	 */
-	public Date getCreatAt() {
-		return creatAt;
+	public Date getCreateAt() {
+		return createAt;
 	}
 
 
 	/**
-	 * @param creatAt the creatAt to set
+	 * @param createAt the createAt to set
 	 */
-	public void setCreatAt(Date creatAt) {
-		this.creatAt = creatAt;
+	public void setCreateAt(Date createAt) {
+		this.createAt = createAt;
 	}
 
 
@@ -104,18 +107,18 @@ public class Subject {
 
 
 	/**
-	 * @return the idgroupe
+	 * @return the groupSize
 	 */
-	public int getIdgroupe() {
-		return idgroupe;
+	public int getGroupSize() {
+		return groupSize;
 	}
 
 
 	/**
-	 * @param idgroupe the idgroupe to set
+	 * @param groupSize the groupSize to set
 	 */
-	public void setIdgroupe(int idgroupe) {
-		this.idgroupe = idgroupe;
+	public void setGroupSize(int groupSize) {
+		this.groupSize = groupSize;
 	}
 
 
@@ -149,8 +152,24 @@ public class Subject {
 	public void setIdPromo(int idPromo) {
 		this.idPromo = idPromo;
 	}
-	
-	
+
+
+	/**
+	 * @return the specialty
+	 */
+	public String getSpecialty() {
+		return specialty;
+	}
+
+
+	/**
+	 * @param specialty the specialty to set
+	 */
+	public void setSpecialty(String specialty) {
+		this.specialty = specialty;
+	}
+
+
 	
 	
 	

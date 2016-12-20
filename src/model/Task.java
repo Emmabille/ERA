@@ -6,26 +6,26 @@ public class Task {
 	private int idTask;
 	private String title;
 	private Date deposedAt;
-	private String documents;
+	private String document;
 	
 	public Task(){
 		
 	}
 	
-	public Task(int idTask, String title, Date deposedAt, String documents) {
+	public Task(int idTask, String title, String document) {
 		super();
 		this.idTask = idTask;
 		this.title = title;
-		this.deposedAt = deposedAt;
-		this.documents = documents;
+		//this.deposedAt = deposedAt;
+		this.document = document;
 	}
 	
 	
-	public void addDocuments(){
+	public void addDocument(){
 		
 		
 	}
-	public void deleteDocuments(){
+	public void deleteDocument(){
 		
 	}
 	public void consult(){
@@ -77,15 +77,15 @@ public class Task {
 	/**
 	 * @return the documents
 	 */
-	public String getDocuments() {
-		return documents;
+	public String getDocument() {
+		return document;
 	}
 
 	/**
 	 * @param documents the documents to set
 	 */
-	public void setDocuments(String documents) {
-		this.documents = documents;
+	public void setDocument(String documents) {
+		this.document = documents;
 	}
 	
 	
