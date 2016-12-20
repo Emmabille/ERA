@@ -9,7 +9,7 @@ package model;
  *
  */
 public class Category_user {
-	private int id;
+	private int idCategory;
 	private String categoryUser;
 	
 	/**
@@ -25,7 +25,7 @@ public class Category_user {
 	 * @param categoryUser
 	 */
 	public Category_user(int id, String categoryUser) {
-		this.id = id;
+		this.idCategory = id;
 		this.categoryUser = categoryUser;
 		
 	}
@@ -34,14 +34,14 @@ public class Category_user {
 	 * @return the id
 	 */
 	public int getId() {
-		return id;
+		return idCategory;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
-		this.id = id;
+		this.idCategory = id;
 	}
 
 	/**
