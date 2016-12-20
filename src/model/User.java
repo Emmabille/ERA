@@ -20,6 +20,7 @@ public class User {
  * default constructor for the User entity, no parameter
  */
 	public User(){
+		
 	}
 /**
  * full constructor for the User entity, with:
@@ -43,14 +44,14 @@ public class User {
  */
 	@Override
 	public String toString() {
-		return "User [First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
-				+ password + "]";
+		return "First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
+				+ password;
 	}
 /**
  * connect method
  */
 	public void connect(){
-		
+
 	}
 	
 /**

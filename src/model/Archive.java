@@ -26,7 +26,7 @@ public class Archive {
 	}
 
 	/**
-	 * full constructor for the Archive entity, with:
+	 * Constructor for the Archive entity, with:
 	 * @param identifiantArchive
 	 * @param title
 	 * @param grade
@@ -34,15 +34,8 @@ public class Archive {
 	 * @param nameTeacher
 	 * @param createAt
 	 */
-	public Archive(int identifiantArchive, String title, String grade, String specialty, String nameTeacher,
-			Date createAt) {
-		super();
+	public Archive(int identifiantArchive) {
 		this.identifiantArchive = identifiantArchive;
-		this.title = title;
-		this.grade = grade;
-		this.specialty = specialty;
-		this.nameTeacher = nameTeacher;
-		this.createAt = createAt;
 		
 	}
 

@@ -10,7 +10,7 @@ package model;
 
 public class Administrator extends User {
 
-	private int identifiantAdmin;
+	private int idAdmin;
 
 	/**
 	 * constructor by default for the Administrator entity
@@ -27,23 +27,23 @@ public class Administrator extends User {
 	 * @param password
 	 * @param identifiantAdmin
 	 */
-	public Administrator(String fname, String lname, String login, String password, int identifiantAdmin) {
+	public Administrator(String fname, String lname, String login, String password, int idAdmin) {
 		super(fname, lname, login, password);
-		this.setIdentifiantAdmin(identifiantAdmin);
+		this.setIdAdmin(idAdmin);
 	}
 
 	/**
 	 * @return the identifiantAdmin
 	 */
-	public int getIdentifiantAdmin() {
-		return identifiantAdmin;
+	public int getIdAdmin() {
+		return idAdmin;
 	}
 
 	/**
 	 * @param identifiantAdmin the identifiantAdmin to set
 	 */
-	public void setIdentifiantAdmin(int identifiantAdmin) {
-		this.identifiantAdmin = identifiantAdmin;
+	public void setIdAdmin(int idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 	
 }

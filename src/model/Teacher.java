@@ -9,7 +9,7 @@ package model;
  *
  */
 public class Teacher extends User{
-	private int identifiantTeacher;
+	private int idTeacher;
 
 	/**
 	 * constructor by default for the Teacher entity
@@ -24,12 +24,20 @@ public class Teacher extends User{
 	 * @param lname
 	 * @param login
 	 * @param password
-	 * @param identifiantTeacher
+	 * @param idTeacher
 	 */
-	public Teacher(int identifiantTeacher, String fname, String lname, String login, String password) {
+	public Teacher(int idTeacher, String fname, String lname, String login, String password) {
 		super(fname, lname, login, password);
-		this.setIdentifiantTeacher(identifiantTeacher);
+		this.setIdTeacher(idTeacher);
 		
+	}
+
+/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "idTeacher = " + idTeacher + super.toString();
 	}
 
 /**
@@ -40,17 +48,17 @@ public class Teacher extends User{
 	}
 	
 	/**
-	 * @return the identifiantTeacher
+	 * @return the idTeacher
 	 */
-	public int getIdentifiantTeacher() {
-		return identifiantTeacher;
+	public int getIdTeacher() {
+		return idTeacher;
 	}
 
 	/**
-	 * @param identifiantTeacher the identifiantTeacher to set
+	 * @param idTeacher the idTeacher to set
 	 */
-	public void setIdentifiantTeacher(int identifiantTeacher) {
-		this.identifiantTeacher = identifiantTeacher;
+	public void setIdTeacher(int idTeacher) {
+		this.idTeacher = idTeacher;
 	}
 
 }

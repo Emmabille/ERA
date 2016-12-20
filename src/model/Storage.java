@@ -10,7 +10,7 @@ package model;
  */
 public class Storage {
 
-	private int identifiantStorage;
+	private int idStorage;
 	private String url;
 	private int size;
 	
@@ -23,29 +23,29 @@ public class Storage {
 	
 	/**
 	 * full constructor for the Storage entity, with:
-	 * @param identifiantStorage
+	 * @param idStorage
 	 * @param url
 	 * @param size
 	 */
-	public Storage(int identifiantStorage, String url, int size) {
+	public Storage(int idStorage, String url, int size) {
 		super();
-		this.identifiantStorage = identifiantStorage;
+		this.idStorage = idStorage;
 		this.url = url;
 		this.size = size;
 	}
 
 	/**
-	 * @return the identifiantStorage
+	 * @return the idStorage
 	 */
-	public int getIdentifiantStorage() {
-		return identifiantStorage;
+	public int getIdStorage() {
+		return idStorage;
 	}
 
 	/**
-	 * @param identifiantStorage the identifiantStorage to set
+	 * @param idStorage the idStorage to set
 	 */
-	public void setIdentifiantStorage(int identifiantStorage) {
-		this.identifiantStorage = identifiantStorage;
+	public void setIdStorage(int idStorage) {
+		this.idStorage = idStorage;
 	}
 
 	/**
