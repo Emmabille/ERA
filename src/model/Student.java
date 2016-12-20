@@ -18,24 +18,46 @@ public class Student extends User{
 	
 	
 	
+	
+	
+	
 	/**
+	 * @param fname
+	 * @param lname
+	 * @param login
+	 * @param password
 	 * @param identifiantStudent
 	 * @param idGroupe
 	 * @param promo
-	 * @param subjects
-	 * @param tasks
 	 */
-	public Student(int identifiantStudent, int idGroupe, int promo) {
-		super();
+	public Student(String fname, String lname, String login, String password, int identifiantStudent, int idGroupe,
+			int promo) {
+		super(fname, lname, login, password);
 		this.identifiantStudent = identifiantStudent;
 		this.idGroupe = idGroupe;
 		this.promo = promo;
-	
 	}
 
 
 
 
+	
+
+
+
+
+
+
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Student identifiantStudent=" + identifiantStudent + ", idGroupe=" + idGroupe + ", promo=" + promo + super.toString()+"";
+				
+	}
 
 
 
@@ -96,6 +118,7 @@ public class Student extends User{
 	public void setPromo(int promo) {
 		this.promo = promo;
 	}
+	
 
 
 
@@ -105,4 +128,4 @@ public class Student extends User{
 	
 	
 
-}
+

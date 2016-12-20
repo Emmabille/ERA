@@ -33,6 +33,26 @@ public class Application {
 		Administrator admin1 = new Administrator("Jean-Jacques", "Rousseau", "jjRousseau", "jjrousseau87", 999);
 		
 		System.out.println(admin1.toString());
-	}	
+		
+	   
+	    Student student1 = new Student ("Adelie", "Dupas", "aDupas", "aDupas12", 2,23, 2016);
+	    Student student2 = new Student ("Alice", "Derrien", "aDerrien", "aDerrien15", 34, 5, 2016);
+	    Student student3= new Student ("Maxime" , "Dujardin", "mDujardin", "mDujardin21", 6, 3, 2016);
+	    
+	    System.out.println(student1.toString());
+	    System.out.println(student2.toString());
+	    System.out.println(student3.toString());
+	   
+	    
+	    Subject subject1 = new Subject (2, "Sujet Java", 2, "Realisation du cahier des charges" , 3, "informatique");
+	    Subject subject2 = new Subject (3, "Sujet BDD", 2, "Creation de 4 tables",1, "informatique"); 
+	    Subject subject3 = new Subject (4, "Sujet HTML", 2, "Creation des interfaces", 2, "informatique");
+	    System.out.println("idSubject="+" "+ subject1.getIdSubject()+", "+"Title="+" "+ subject1.getTitle()+", "+ "GroupeSize"+" "+ subject1.getGroupSize()+", "+"Description ="+" "+ subject1.getDescription()+" "+ "Promo" +subject1.getIdPromo()+" "+"specialty="+" " +subject1.getSpecialty());
+	    
+	    Task task1 = new Task ( 1, "Devoir Java", "nous souhaitons realiser une plateforme pour deposer les devoirs");
+	    Task task2 = new Task (2, "Devoir BDD", "realisation de table Student, Professeur, Subject, Task");
+	    
+	    System.out.println("TaskId="+" "+ task1.getIdTask()+ ", "+ "title="+" "+task1.getTitle()+" ,"+ "Document:"+" "+task1.getDocument());
+	    
 
-}
+}}
