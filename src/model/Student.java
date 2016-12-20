@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student extends User{
 	private int identifiantStudent;
 	private int idGroupe;
 	private int promo;
