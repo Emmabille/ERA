@@ -4,8 +4,7 @@ package model.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.ldap.LdapContext;
-
+import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -15,7 +14,7 @@ import model.Ldap;
 import model.User;
 
 public class TestLDAP {
-	Ldap ldap;
+	Ldap ldap = new Ldap();
 	static String url = "ldap://192.168.3.250:389/DC=IMIE,DC=lan";
 	static String login = "ldap_read";
 	static String pass = "Pr0jetJuJube";
@@ -39,17 +38,21 @@ public class TestLDAP {
 
 	@Test
 	public void testConnect() {
-		LdapContext connexion = this.ldap.connect();
+		Object connexion = this.ldap.connect();
 		Object resultAttendu = null;
+
+		assertNotNull(connexion);
+		assertEquals(resultAttendu, connexion);
 	}
 	
 	@Test
 	public void testGetAll(){
-		Ldap listUser = new Ldap();
+		Ldap listYMB = new Ldap();
 
 		List<User>result = new ArrayList<User>();
-		result = listUser.getAll();
-	
+		result = listYMB.getAll();
+		
+		
 	}
 	
 	public void testExtract(){

@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -13,10 +14,16 @@ import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 
 public class Ldap {
-	private String serverURL = "ldap://192.168.3.250:389/DC=IMIE,DC=lan";
-	private String serverLogin = "ldap_read";
-	private String serverPass = "Pr0jetJuJube";
-	private SearchResult search;
+	String serverURL = "ldap://192.168.3.250:389/DC=IMIE,DC=lan";
+	String serverLogin = "ldap_read";
+	String serverPass = "Pr0jetJuJube";
+
+	static String firstName;
+	static String lastName;
+	static String login;
+	static String email;
+	static SearchResult search;
+	static int index = 0;
 
 	private LdapContext myContext;
 
@@ -43,15 +50,47 @@ public class Ldap {
 
 	public List<User> getAll() {
 		String filter = "OU=2016-2017-JEE, OU=POEC,OU=Eleves,OU=Utilisateurs,OU=Formation,OU=RENNES,OU=Sites";
-		
+		List<User> listYMB = new ArrayList<User>();
 		try {
 			// Filtre du LDAP
-			NamingEnumeration<SearchResult> userAnswer = myContext.search(filter, null);
+			NamingEnumeration<SearchResult> listUser = myContext.search(filter, null);
 
-			while (userAnswer.hasMoreElements()) {
-				search = (SearchResult) userAnswer.next();	
-			}				
-			System.out.println("Récupération de la liste des utilisateurs");
+			while (listUser.hasMoreElements()) {
+				search = (SearchResult) listUser.next();
+				index++;
+				//Attributes attrs = search.getAttributes();
+				Ldap.extract();
+
+				/*if (attrs != null) {
+					try {
+						for (NamingEnumeration ae = attrs.getAll(); ae.hasMore();) {
+							Attribute attr = (Attribute) ae.next();
+							if (attr.getID().equals("givenName")) {
+								System.out.print(attr.get(0).toString() + " ");
+								firstName = attr.get().toString();
+							}
+							if (attr.getID().equals("sn")) {
+								System.out.print(attr.get(0).toString() + " ");
+								lastName = attr.get().toString();
+							}
+							if (attr.getID().equals("sAMAccountName")) {
+								System.out.println(attr.get(0).toString());
+								login = attr.get().toString();
+							}
+							if (attr.getID().equals("mail")) {
+								System.out.print(attr.get(0).toString() + " ");
+								email = attr.get().toString();
+							}
+							listYMB.add(new User(firstName, lastName, login, login));
+						}
+					} catch (NamingException e) {
+						e.printStackTrace();
+					}
+
+				}*/
+			}
+			System.out.print("Récupération de la liste des utilisateurs: ");
+			System.out.println(index + " utilisateurs récupérés");
 
 		} catch (NamingException e) {
 			e.printStackTrace();
@@ -60,87 +99,37 @@ public class Ldap {
 
 	}
 
-	public User extract() {
+	public static User extract() {
 		Attributes attrs = search.getAttributes();
+		List<User> listYMB = new ArrayList<User>();
+
 		if (attrs != null) {
 			try {
 				for (NamingEnumeration ae = attrs.getAll(); ae.hasMore();) {
 					Attribute attr = (Attribute) ae.next();
 					if (attr.getID().equals("givenName")) {
 						System.out.print(attr.get(0).toString() + " ");
+						firstName = attr.get().toString();
 					}
 					if (attr.getID().equals("sn")) {
 						System.out.print(attr.get(0).toString() + " ");
+						lastName = attr.get().toString();
 					}
 					if (attr.getID().equals("sAMAccountName")) {
 						System.out.println(attr.get(0).toString());
+						login = attr.get().toString();
 					}
 					if (attr.getID().equals("mail")) {
 						System.out.print(attr.get(0).toString() + " ");
+						email = attr.get().toString();
 					}
+					listYMB.add(new User(firstName, lastName, login, login));
 				}
 			} catch (NamingException e) {
 				e.printStackTrace();
 			}
+
 		}
 		return null;
 	}
-
-	/**
-	 * @return the serverURL
-	 */
-	public String getServerURL() {
-		return serverURL;
-	}
-
-	/**
-	 * @param serverURL the serverURL to set
-	 */
-	public void setServerURL(String serverURL) {
-		this.serverURL = serverURL;
-	}
-
-	/**
-	 * @return the serverLogin
-	 */
-	public String getServerLogin() {
-		return serverLogin;
-	}
-
-	/**
-	 * @param serverLogin the serverLogin to set
-	 */
-	public void setServerLogin(String serverLogin) {
-		this.serverLogin = serverLogin;
-	}
-
-	/**
-	 * @return the serverPass
-	 */
-	public String getServerPass() {
-		return serverPass;
-	}
-
-	/**
-	 * @param serverPass the serverPass to set
-	 */
-	public void setServerPass(String serverPass) {
-		this.serverPass = serverPass;
-	}
-
-	/**
-	 * @return the myContext
-	 */
-	public LdapContext getMyContext() {
-		return myContext;
-	}
-
-	/**
-	 * @param myContext the myContext to set
-	 */
-	public void setMyContext(LdapContext myContext) {
-		this.myContext = myContext;
-	}
 }
-
-
