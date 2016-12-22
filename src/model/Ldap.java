@@ -48,7 +48,7 @@ public class Ldap {
 
 	}
 
-	public List<User> getAll() {
+	public int getAll() {
 		String filter = "OU=2016-2017-JEE, OU=POEC,OU=Eleves,OU=Utilisateurs,OU=Formation,OU=RENNES,OU=Sites";
 		List<User> listYMB = new ArrayList<User>();
 		try {
@@ -58,8 +58,10 @@ public class Ldap {
 			while (listUser.hasMoreElements()) {
 				search = (SearchResult) listUser.next();
 				index++;
+				
 				//Attributes attrs = search.getAttributes();
 				Ldap.extract();
+				
 
 				/*if (attrs != null) {
 					try {
@@ -95,10 +97,11 @@ public class Ldap {
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return index;
 
 	}
-
+	
+	
 	public static User extract() {
 		Attributes attrs = search.getAttributes();
 		List<User> listYMB = new ArrayList<User>();
@@ -132,4 +135,6 @@ public class Ldap {
 		}
 		return null;
 	}
+
+
 }

@@ -36,22 +36,26 @@ public class TestLDAP {
 		this.ldap = null;
 	}
 
-	@Test
+	/*@Test
 	public void testConnect() {
 		Object connexion = this.ldap.connect();
 		Object resultAttendu = null;
 
 		assertNotNull(connexion);
 		assertEquals(resultAttendu, connexion);
-	}
+	}*/
 	
 	@Test
 	public void testGetAll(){
 		Ldap listYMB = new Ldap();
-
-		List<User>result = new ArrayList<User>();
-		result = listYMB.getAll();
+		int i = ldap.getAll();
 		
+		List<User>result = new ArrayList<User>();
+		
+				
+		assertNotNull(listYMB);
+		assertEquals(24, i);
+		//assert contains
 		
 	}
 	
