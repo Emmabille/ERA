@@ -12,10 +12,12 @@ public class Student extends User{
 	
 	
 	public Student(){ 
-		
+		super();
 	}
 	
-	
+	public Student (String lname, String fname, String login){
+	super(lname, fname, login);	
+	}
 	
 	
 	

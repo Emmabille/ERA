@@ -3,23 +3,29 @@
  */
 package model;
 
-
 /**
  * User entity
+ * 
  * @author aureliadelaune
  *
  */
 public class User {
 	private int idUser;
-	private String firstName;
-	private String lastName;
-	private String userName;
+	protected String firstName;
+	protected String lastName;
+	protected String userName;
 	private String password;
-	
-/**
- * default constructor for the User entity, no parameter
- */
-	public User(){
+	private String email;
+	/**
+	 * default constructor for the User entity, no parameter
+	 */
+	public User() {
+	}
+	public User(String fname, String lname, String login, String email){
+		this.lastName = lname;		
+		this.firstName = fname;
+		this.userName = login;
+		this.setEmail(email);
 	}
 /**
  * full constructor for the User entity, with:
@@ -28,38 +34,42 @@ public class User {
  * @param login
  * @param password
  */
-	public User(String fname, String lname, String login, String password){
+
+	
+	public User(String fname, String lname, String login, String password, String email){
 		this.firstName = fname;
 		this.lastName = lname;
 		this.userName = login;
 		this.password = password;
+		this.setEmail(email);
 	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-/**
- * toString method for the User entity
- */
-	@Override
-	public String toString() {
-		return "First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
-				+ password;
-	}
-/**
- * connect method
- */
-	public void connect(){
+	/**
+	 * toString method for the User entity
+	 */
+//	@Override
+//	public String toString() {
+//		return "First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
+//				+ password;
+//	}
+
+	/**
+	 * connect method
+	 */
+	public void connect() {
 
 	}
-	
-/**
- * disconnect method
- */
-	public void disconnect(){
-		
+
+	/**
+	 * disconnect method
+	 */
+	public void disconnect() {
+
 	}
-	
+
 	/**
 	 * @return the id
 	 */
@@ -68,7 +78,8 @@ public class User {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.idUser = id;
@@ -82,7 +93,8 @@ public class User {
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName
+	 *            the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -96,7 +108,8 @@ public class User {
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName
+	 *            the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -110,7 +123,8 @@ public class User {
 	}
 
 	/**
-	 * @param userName the userName to set
+	 * @param userName
+	 *            the userName to set
 	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
@@ -124,12 +138,19 @@ public class User {
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param password
+	 *            the password to set
 	 */
 	public void setPassword(String password) {
-//		PasswordEncoder crypto = new Md5PasswordEncoder();
-//		this.password = crypto.encodePassword(password, null);
+		// PasswordEncoder crypto = new Md5PasswordEncoder();
+		// this.password = crypto.encodePassword(password, null);
 		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

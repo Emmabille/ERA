@@ -17,6 +17,9 @@ public class Teacher extends User{
 	public Teacher(){
 		
 	}
+	public Teacher(String lname, String fname, String login){
+		super(lname, fname, login);	
+		}
 	
 	/**
 	 * full constructor for the Teacher entity, calling for the User constructor, with:

@@ -14,7 +14,7 @@ public class Subject {
 	private Date createAt;
 
 	private ArrayList<Teacher> authors;
-	private ArrayList<Task> homework = new ArrayList<Task>();
+	private ArrayList<Homework> homework = new ArrayList<Homework>();
 	
 	public Subject(){
 		
@@ -59,18 +59,21 @@ public class Subject {
 	public void AjouterAuteur(Teacher t){
 		if (authors.size() < 2) {
 			authors.add(t);
+			System.out.println(t.getLastName() + " a été ajouté en tant qu'auteur");
 		} else {
 			System.out.println("err taille max d'auteurs");
 		}		
 	}
 	
-	
 	public void RetirerAuteur(Teacher t){
+		if (authors.size() > 1) {
 			authors.remove(t);
-			if (authors.size() < 1) {
-				System.out.println("plus d'auteur pour le [" +  title + "]. dernier enseignant : " + t.getLastName());
-			}
+			System.out.println(t.getLastName() + " a été retiré de la liste d'auteurs");
+		} else {
+			System.out.println("plus d'auteur pour le [" +  title + "]. Dernier enseignant : " + t.getLastName());
+		}		
 	}
+	
 	
 	public void deleteSubject(){
 		
