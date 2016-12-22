@@ -1,133 +1,45 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Student extends User{
-	private int identifiantStudent;
-	private int idGroupe;
+	private int idStudent;
+	private int idGroup;
 	private int promo;
-	
-
-	
 	
 	public Student(){ 
 		super();
 	}
 	
-	public Student (String lname, String fname, String login){
-	super(lname, fname, login);	
+	public Student (String lname, String fname, String login, String email){
+		super(lname, fname, login, email);	
 	}
 	
 	
-	
-	
-	
 	/**
+	 * full constructor for the Student entity, with :
 	 * @param fname
 	 * @param lname
 	 * @param login
 	 * @param password
 	 * @param identifiantStudent
-	 * @param idGroupe
+	 * @param idGroup
 	 * @param promo
 	 */
-	public Student(String fname, String lname, String login, String password, int identifiantStudent, int idGroupe,
-			int promo) {
-		super(fname, lname, login, password);
-		this.identifiantStudent = identifiantStudent;
-		this.idGroupe = idGroupe;
+	public Student(String fname, String lname, String login, String password, String email, 
+			int idStudent, int idGroup, int promo) {
+		super(fname, lname, login, password, email);
+		this.idStudent = idStudent;
+		this.idGroup = idGroup;
 		this.promo = promo;
 	}
-
-
-
-
-	
-
-
-
-
-
-
-
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Student identifiantStudent=" + identifiantStudent + ", idGroupe=" + idGroupe + ", promo=" + promo + super.toString()+"";
+		return "Student idStudent=" + idStudent + ", idGroup=" + idGroup + ", promo=" + promo + 
+				super.toString()+"";
 				
 	}
 
-
-
-
-	/**
-	 * @return the identifiantStudent
-	 */
-	public int getIdentifiantStudent() {
-		return identifiantStudent;
-	}
-
-
-
-
-	/**
-	 * @param identifiantStudent the identifiantStudent to set
-	 */
-	public void setIdentifiantStudent(int identifiantStudent) {
-		this.identifiantStudent = identifiantStudent;
-	}
-
-
-
-
-	/**
-	 * @return the idGroupe
-	 */
-	public int getIdGroupe() {
-		return idGroupe;
-	}
-
-
-
-
-	/**
-	 * @param idGroupe the idGroupe to set
-	 */
-	public void setIdGroupe(int idGroupe) {
-		this.idGroupe = idGroupe;
-	}
-
-
-
-
-	/**
-	 * @return the promo
-	 */
-	public int getPromo() {
-		return promo;
-	}
-
-
-
-
-	/**
-	 * @param promo the promo to set
-	 */
-	public void setPromo(int promo) {
-		this.promo = promo;
-	}
-	
-
-
-
-
 }
-	
-	
-	
-
-
