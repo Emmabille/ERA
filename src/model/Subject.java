@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Subject {
@@ -11,8 +12,9 @@ public class Subject {
 	private int idPromo;
 	private String specialty;
 	private Date createAt;
-	
-	
+
+	private ArrayList<Teacher> authors;
+	private ArrayList<Task> homework = new ArrayList<Task>();
 	
 	public Subject(){
 		
@@ -28,8 +30,9 @@ public class Subject {
 	 * @param idPromo
 	 */
 	public Subject(int idSubject, String title, Date deadline, int groupSize, String description,
-			int idPromo, String specialty) {
+			int idPromo, String specialty, ArrayList<Teacher> Authors) {
 		super();
+		
 		this.idSubject = idSubject;
 		this.title = title;
 		this.deadline = deadline;
@@ -38,12 +41,10 @@ public class Subject {
 		this.idPromo = idPromo;
 		this.specialty= specialty;
 		this.createAt= new Date();
-		
+		this.authors=Authors;
 	}
 	
 	public void createSubject(){
-		
-		
 		
 	}
 	
@@ -51,11 +52,25 @@ public class Subject {
 		
 	}
 	
-	public void apdateSubject(){
+	public void updateSubject(){
 		
 	}
 	
-		
+	public void AjouterAuteur(Teacher t){
+		if (authors.size() < 2) {
+			authors.add(t);
+		} else {
+			System.out.println("err taille max d'auteurs");
+		}		
+	}
+	
+	
+	public void RetirerAuteur(Teacher t){
+			authors.remove(t);
+			if (authors.size() < 1) {
+				System.out.println("plus d'auteur pour le [" +  title + "]. dernier enseignant : " + t.getLastName());
+			}
+	}
 	
 	public void deleteSubject(){
 		
@@ -184,6 +199,13 @@ public class Subject {
 		return "Subject [idSubject=" + idSubject + ", title=" + title + ", deadline=" + deadline + ", groupSize="
 				+ groupSize + ", description=" + description + ", idPromo=" + idPromo + ", specialty=" + specialty
 				+", createAt=" +createAt+ "]";
+		//Todo ajouter les auteurs associés
+	}
+
+
+	public void downloadHomework() {
+		// TODO Auto-generated method stub
+	//	task = new task 
 	}
 
 
