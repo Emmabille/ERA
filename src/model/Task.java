@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 
+//HomeWork
 public class Task {
 	private int idTask;
 	private String title;
@@ -16,8 +17,8 @@ public class Task {
 		super();
 		this.idTask = idTask;
 		this.title = title;
-		//this.deposedAt = deposedAt;
 		this.document = document;
+		this.deposedAt = new Date();
 	}
 	
 	
@@ -29,6 +30,9 @@ public class Task {
 		
 	}
 	public void consult(){
+		
+	}
+	public void download(){
 		
 	}
 
@@ -87,6 +91,16 @@ public class Task {
 	public void setDocument(String documents) {
 		this.document = documents;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Task [idTask=" + idTask + ", title=" + title + ", deposedAt=" + deposedAt + ", document=" + document
+				+ "]";
+	}
+	
 	
 	
 	

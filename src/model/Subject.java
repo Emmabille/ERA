@@ -1,18 +1,20 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Subject {
 	private int idSubject;
 	private String title;
-	private Date createAt;
 	private Date deadline;
-	private int  groupSize; 
+	private int groupSize; 
 	private String description;
 	private int idPromo;
 	private String specialty;
-	
-	
+	private Date createAt;
+
+	private ArrayList<Teacher> authors;
+	private ArrayList<Task> homework = new ArrayList<Task>();
 	
 	public Subject(){
 		
@@ -22,23 +24,56 @@ public class Subject {
 	/**
 	 * @param idSubject
 	 * @param title
-	 * @param createAt
 	 * @param deadline
 	 * @param idgroupe
 	 * @param description
 	 * @param idPromo
 	 */
-	public Subject(int idSubject, String title, int groupSize, String description,
-			int idPromo, String specialty) {
+	public Subject(int idSubject, String title, Date deadline, int groupSize, String description,
+			int idPromo, String specialty, ArrayList<Teacher> Authors) {
 		super();
+		
 		this.idSubject = idSubject;
 		this.title = title;
-		this.createAt = new Date();
-		//this.deadline = deadline;
+		this.deadline = deadline;
 		this.groupSize = groupSize;
 		this.description = description;
 		this.idPromo = idPromo;
 		this.specialty= specialty;
+		this.createAt= new Date();
+		this.authors=Authors;
+	}
+	
+	public void createSubject(){
+		
+	}
+	
+	public void consultSubject(){
+		
+	}
+	
+	public void updateSubject(){
+		
+	}
+	
+	public void AjouterAuteur(Teacher t){
+		if (authors.size() < 2) {
+			authors.add(t);
+		} else {
+			System.out.println("err taille max d'auteurs");
+		}		
+	}
+	
+	
+	public void RetirerAuteur(Teacher t){
+			authors.remove(t);
+			if (authors.size() < 1) {
+				System.out.println("plus d'auteur pour le [" +  title + "]. dernier enseignant : " + t.getLastName());
+			}
+	}
+	
+	public void deleteSubject(){
+		
 	}
 
 
@@ -74,21 +109,7 @@ public class Subject {
 	}
 
 
-	/**
-	 * @return the createAt
-	 */
-	public Date getCreateAt() {
-		return createAt;
-	}
-
-
-	/**
-	 * @param createAt the createAt to set
-	 */
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
-	}
-
+	
 
 	/**
 	 * @return the deadline
@@ -170,7 +191,24 @@ public class Subject {
 	}
 
 
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Subject [idSubject=" + idSubject + ", title=" + title + ", deadline=" + deadline + ", groupSize="
+				+ groupSize + ", description=" + description + ", idPromo=" + idPromo + ", specialty=" + specialty
+				+", createAt=" +createAt+ "]";
+		//Todo ajouter les auteurs associés
+	}
+
+
+	public void downloadHomework() {
+		// TODO Auto-generated method stub
+	//	task = new task 
+	}
+
+
 	
 	
 	
