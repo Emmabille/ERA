@@ -2,6 +2,7 @@ package model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -16,6 +17,7 @@ public class Application {
 
 	public static void main(String[] args) throws ParseException {
 
+		//Création utilisateurs
         User user1 = new User ("Albert", "Camus", "aCamus", "acamus21");
 		User user2 = new User ("Emile", "Zola", "eZola", "ezola32");
 		User user3 = new User ("Victor", "Hugo", "vHugo", "vhugo49");
@@ -24,6 +26,7 @@ public class Application {
 		System.out.println(user2.toString());
 		System.out.println(user3.toString());
 		
+		//Création des enseignants
 		Teacher teacher1 = new Teacher(1, "HonorÃ©", "de Balzac", "hdeBalzac", "hdebalzac64");
 		Teacher teacher2 = new Teacher(2, "Guillaume", "Appolinaire", "gAppolinaire", "gappolinaire39");
 		Teacher teacher3 = new Teacher(3, "GÃ©rard", "de Nerval", "gdeNerval", "gdenerval92");
@@ -31,6 +34,9 @@ public class Application {
 		//on veut teacher ou user pour le syst.out.print ? ce qui suit donne user. 
 		//pour teacher, faut faire son propre toString, mais compliquÃ©...
 		System.out.println(teacher1.toString());
+		teacher1.connect();
+		teacher1.downloadHomework();
+		teacher1.disconnect();
 		System.out.println(teacher2.toString());
 		System.out.println(teacher3.toString());
 		
@@ -48,15 +54,45 @@ public class Application {
 	    System.out.println(student3.toString());
 	   
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		
-	    Subject subject1 = new Subject (2, "Sujet Java" ,sdf.parse("31/12/2016"),2, "Realisation du cahier des charges" , 3, "informatique");
-	    Subject subject2 = new Subject (3, "Sujet BDD", sdf.parse("02/01/2017") ,2, "Creation de 4 tables",1, "informatique"); 
-	    Subject subject3 = new Subject (4, "Sujet HTML",sdf.parse("01/02/2017") ,2, "Creation des interfaces", 2, "informatique");
+
+	    //Création des listes d'autheurs
+	    ArrayList<Teacher> authorsS1 = new ArrayList<Teacher>();
+	    ArrayList<Teacher> authorsS2 = new ArrayList<Teacher>();
+	    ArrayList<Teacher> authorsS3 = new ArrayList<Teacher>();
+	    
+	    authorsS1.add(teacher1);
+	    
+	    authorsS2.add(teacher2);
+
+	    authorsS3.add(teacher1);
+	    authorsS3.add(teacher2);
+
+	    System.out.println("taille authorsS1:" + authorsS1.size());
+	    System.out.println("taille authorsS2:" + authorsS2.size());
+	    System.out.println("taille authorsS3:" + authorsS3.size());
+	    //Création des sujets
+	    Subject subject1 = new Subject (2, "Sujet Java" ,sdf.parse("31/12/2016"),2, "Realisation du cahier des charges" , 3, "informatique",authorsS1);
+	    Subject subject2 = new Subject (3, "Sujet BDD", sdf.parse("02/01/2017") ,2, "Creation de 4 tables",1, "informatique",authorsS2); 
+	    Subject subject3 = new Subject (4, "Sujet HTML",sdf.parse("01/02/2017") ,2, "Creation des interfaces", 2, "informatique",authorsS3);
 	    //System.out.println("idSubject="+" "+ subject1.getIdSubject()+", "+"Title="+" "+ subject1.getTitle()+", "+ "GroupeSize"+" "+ subject1.getGroupSize()+", "+"Description ="+" "+ subject1.getDescription()+" "+ "Promo" +subject1.getIdPromo()+" "+"specialty="+" " +subject1.getSpecialty());
 	    System.out.println(subject1.toString());
 	    System.out.println(subject2.toString());
 	    System.out.println(subject3.toString());
+
+	    subject3.RetirerAuteur(teacher2);
+	    subject3.AjouterAuteur(teacher3);
+	    subject3.AjouterAuteur(teacher2);
+	    
+	    subject2.RetirerAuteur(teacher2);
+	    
+
+	    subject1.AjouterAuteur(teacher2);
+
+	    System.out.println("taille authorsS1:" + authorsS1.size());
+	    System.out.println("taille authorsS2:" + authorsS2.size());
+	    System.out.println("taille authorsS3:" + authorsS3.size());
+	    
+	    subject1.downloadHomework();
 	    
 	   
 	    

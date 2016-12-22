@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 
+//HomeWork
 public class Task {
 	private int idTask;
 	private String title;
