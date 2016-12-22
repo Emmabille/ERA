@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends User{
-	private int identifiantStudent;
+	private int idStudent;
 	private int idGroupe;
-	private int promo;
+	private int idGrade;
 	
 
 	

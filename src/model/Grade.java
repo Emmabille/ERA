@@ -2,13 +2,13 @@ package model;
 
 import java.time.Year;
 
-public class Promotion {
-	private int idPromo;
+public class Grade {
+	private int idGrade;
 	private String name;
 	private Year year;
 	
 	
-	public Promotion(){
+	public Grade(){
 		
 	}
 
@@ -18,9 +18,9 @@ public class Promotion {
 	 * @param name
 	 * @param year
 	 */
-	public Promotion(int idPromo, String name, Year year) {
+	public Grade(int idGrade, String name, Year year) {
 		super();
-		this.idPromo = idPromo;
+		this.idGrade = idGrade;
 		this.name = name;
 		this.year = year;
 	}
@@ -29,16 +29,16 @@ public class Promotion {
 	/**
 	 * @return the idPromo
 	 */
-	public int getIdPromo() {
-		return idPromo;
+	public int getIdGrade() {
+		return idGrade;
 	}
 
 
 	/**
 	 * @param idPromo the idPromo to set
 	 */
-	public void setIdPromo(int idPromo) {
-		this.idPromo = idPromo;
+	public void setIdGrade(int idGrade) {
+		this.idGrade = idGrade;
 	}
 
 
