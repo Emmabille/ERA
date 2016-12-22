@@ -118,13 +118,13 @@ public class Connexion {
 			if (attrs != null) {
 				try {
 					// Récupération des attributs
-					String lname = "", fname = "", login = "";
+					String lname = "", fname = "", login = "", email = "";
 					for (NamingEnumeration ae = attrs.getAll(); ae.hasMore();) {
 						Attribute attr = (Attribute) ae.next();
 						if (attr.getID().equals("sn")) {
 							// System.out.println(attr.get(0).toString());
 							lname = attr.get(0).toString();
-							teachers.add(new Teacher(lname, fname, login));
+							teachers.add(new Teacher(lname, fname, login, email));
 							// System.out.println(users.toString());
 						}
 						if (attr.getID().equals("givenName")) {

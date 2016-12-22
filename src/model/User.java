@@ -21,6 +21,7 @@ public class User {
 	 */
 	public User() {
 	}
+	
 	public User(String fname, String lname, String login, String email){
 		this.lastName = lname;		
 		this.firstName = fname;
@@ -50,11 +51,11 @@ public class User {
 	/**
 	 * toString method for the User entity
 	 */
-//	@Override
-//	public String toString() {
-//		return "First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
-//				+ password;
-//	}
+	@Override
+	public String toString() {
+		return "First Name = " + firstName + ", Last Name = " + lastName + ", User Name = " + userName + ", Password = "
+				+ password;
+	}
 
 	/**
 	 * connect method

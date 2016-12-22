@@ -17,8 +17,8 @@ public class Teacher extends User{
 	public Teacher(){
 		
 	}
-	public Teacher(String lname, String fname, String login){
-		super(lname, fname, login);	
+	public Teacher(String lname, String fname, String login, String email){
+		super(lname, fname, login, email);	
 		}
 	
 	/**
