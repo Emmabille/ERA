@@ -3,17 +3,17 @@ package model;
 import java.util.Date;
 
 //HomeWork
-public class Task {
+public class Homework {
 	private int idTask;
 	private String title;
 	private Date deposedAt;
 	private String document;
 	
-	public Task(){
+	public Homework(){
 		
 	}
 	
-	public Task(int idTask, String title, String document) {
+	public Homework(int idTask, String title, String document) {
 		super();
 		this.idTask = idTask;
 		this.title = title;
