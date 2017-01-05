@@ -1,18 +1,16 @@
 package model;
 
-public class Groupe {
+public class Group {
 	private int idGroupe;
 	
-	public Groupe(){
+	public Group(){
 		
-	}
-	
-	
+	}	
 	
 	/**
 	 * @param idGroupe
 	 */
-	public Groupe(int idGroupe) {
+	public Group(int idGroupe) {
 		super();
 		this.idGroupe = idGroupe;
 	}

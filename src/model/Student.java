@@ -1,26 +1,15 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Student extends User{
 	private int identifiantStudent;
+//groupID vraiment necessaire?
 	private int idGroupe;
-	private int promo;
-	
-
-	
+	private int promo;	
 	
 	public Student(){ 
 		
 	}
-	
-	
-	
-	
-	
-	
-	
+		
 	/**
 	 * @param fname
 	 * @param lname
@@ -39,17 +28,6 @@ public class Student extends User{
 	}
 
 
-
-
-	
-
-
-
-
-
-
-
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -58,9 +36,6 @@ public class Student extends User{
 		return "Student identifiantStudent=" + identifiantStudent + ", idGroupe=" + idGroupe + ", promo=" + promo + super.toString()+"";
 				
 	}
-
-
-
 
 	/**
 	 * @return the identifiantStudent
