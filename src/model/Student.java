@@ -1,20 +1,16 @@
 package model;
 
 public class Student extends User{
-	private int idStudent;
 
+	private int idStudent;
+//groupID vraiment necessaire?
 	private int idGroup;
-	private int promo;
+	private int promo;	
 	
 	public Student(){ 
 		super();
 	}
-	
-	public Student (String lname, String fname, String login, String email){
-		super(lname, fname, login, email);	
-	}
-	
-	
+
 	/**
 	 * full constructor for the Student entity, with :
 	 * @param fname
@@ -39,8 +35,50 @@ public class Student extends User{
 	@Override
 	public String toString() {
 		return "Student idStudent=" + idStudent + ", idGroup=" + idGroup + ", promo=" + promo + 
-				super.toString()+"";
-				
+				super.toString()+"";				
 	}
 
+
+	/**
+	 * @return the identifiantStudent
+	 */
+	public int getIdStudent() {
+		return idStudent;
+	}
+
+	/**
+	 * @param identifiantStudent the identifiantStudent to set
+	 */
+	public void setIdStudent(int idStudent) {
+		this.idStudent = idStudent;
+	}
+
+	/**
+	 * @return the idGroupe
+	 */
+	public int getIdGroup() {
+		return idGroup;
+	}
+
+	/**
+	 * @param idGroupe the idGroupe to set
+	 */
+	public void setIdGroup(int idGroup) {
+		this.idGroup = idGroup;
+	}
+
+	/**
+	 * @return the promo
+	 */
+	public int getPromo() {
+		return promo;
+	}
+	
+	/**
+	 * @param promo the promo to set
+	 */
+	public void setPromo(int promo) {
+		this.promo = promo;
+	}
 }
+	
