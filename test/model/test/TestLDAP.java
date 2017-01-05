@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Ldap;
+import fr.imie.poecpoei.calculatrice.Ldap;
 import model.User;
 
 public class TestLDAP {
